@@ -1,4 +1,6 @@
-body {
+html, body {
 	height:100%;
 	body:100%;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #E9EBEE;
 }

@@ -7,14 +7,14 @@ import { HomeComponent } from "./home.component";
 import { routing } from "./home.routing";
 import { SharedModule } from "../shared/shared.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     imports: [
-        BrowserModule,
-        HttpModule,
         routing,
+        CommonModule,
+        FormsModule,
         SharedModule.forRoot(),
-        NgSemanticModule,
     ],
     declarations: [
         HomeComponent

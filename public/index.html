@@ -6,16 +6,20 @@
 
         <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/jquery-ui-1.9.2.custom.min.css">
         <!-- 1. Load libraries -->
         <!-- Polyfill(s) for older browsers -->
+
         <script src="assets/js/vendor/shim.min.js"></script>
         <script src="assets/js/vendor/zone.min.js"></script>
         <script src="assets/js/vendor/Reflect.js"></script>
         <script src="assets/js/vendor/system.js"></script>
+        <script src="assets/js/jquery-1.8.3.js"></script>
         <script src="assets/js/vendor/jquery.min.js"></script>
+        <!--<script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>-->
         <script src="assets/js/vendor/semantic.min.js"></script>
-
 
         <!--BOOTSTRA{-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,14 +32,18 @@
 
     <body>
         <app>
-            <div class="ui active inverted dimmer">
-                <div class="ui small loader"></div>
+            <div class="ui active dimmer">
+                <div class="ui text loader">Loading</div>
             </div>
+
         </app>
+
         <script src="systemjs.config.js"></script>
         <script>
             System.import('app').catch(function(err) { console.error(err); });
         </script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjYd2WY8LTvjWNSppdogu8B6y5XDdgVI&libraries=places" async defer></script>
+
         <!--  Production mod  -->
         <!--<script src="assets/js/bundle.min.js"></script>-->
     </body>

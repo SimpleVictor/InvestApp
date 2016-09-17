@@ -107,6 +107,12 @@ h1 {
     margin-left: 30%;
 
 }
+
+hr{
+    width: 300px;
+
+}
+
 .input-group {
     position: relative;
 }
@@ -114,15 +120,17 @@ h1 {
     display: block;
     height: 60px;
     width: 40%;
-    color: #e5536b;
+    position: relative;
+    color: #fff;
+    text-align: center;
     border: none;
     border-radius: 0 !important;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 300;
     padding: 0;
     background-color: transparent;
     box-shadow: none;
-    border-bottom: 8px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 8px solid #fff;
 }
 .input-group .form-control {
     position: relative;
@@ -141,7 +149,8 @@ h1 {
 label {
     position: absolute;
     top: -18px;
-    color: rgba(255, 255, 255, 0.5);
+    /*color: rgba(255, 255, 255, 0.5);*/
+    color: #fff;
     font-size: 12px;
     font-weight: 300;
     transition: 0.2s ease all;
@@ -167,8 +176,8 @@ label {
 }
 
 /* INPUT DEFAULT COLOR */
-.form-control:focus ~ label {  color: #e5536b; }
-label ~ .form-bar:before, label ~ .form-bar:after {background: #e5536b; }
+.form-control:focus ~ label {  color: #7c7c7c; }
+label ~ .form-bar:before, label ~ .form-bar:after {background: #7c7c7c; }
 .form-control:valid ~ .control-label {}
 
 /* FROM BAR STYLE*/

@@ -1,10 +1,13 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { ApiService } from "../../service/api.service";
+import {BrowserModule} from "@angular/platform-browser";
+import {HttpModule} from "@angular/http";
+import {NgSemanticModule} from "ng-semantic/ng-semantic";
+import {UserInputService} from "../../service/userinput.service";
 
 @NgModule({
-    imports:      [ CommonModule ],
+    imports:      [ CommonModule ,BrowserModule, HttpModule, NgSemanticModule],
     declarations: [ /* Declare components and pipes */],
     exports:      [ /* Export them */ ]
 })
@@ -14,7 +17,7 @@ export class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                ApiService
+                UserInputService
             ]
         };
     }

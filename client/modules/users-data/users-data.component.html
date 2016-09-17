@@ -1,0 +1,74 @@
+<div class="user">
+
+
+
+        <div class="ui blue raised segment">
+            <h1>Progress Bar</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                    40%
+                </div>
+            </div>
+        </div>
+
+
+        <!--<div class="ui blue raised segment">-->
+            <!--<div class="ui buttons">-->
+                <!--<button class="ui right labeled icon button active">-->
+                    <!--Basic Puchase Info-->
+                    <!--<i class="right chevron icon"></i>-->
+                <!--</button>-->
+                <!--<button class="ui right labeled icon button">-->
+                    <!--Mortage-->
+                    <!--<i class="right chevron icon"></i>-->
+                <!--</button>-->
+                <!--<button class="ui right labeled icon button">-->
+                    <!--Calculation Assumptions-->
+                    <!--<i class="right chevron icon"></i>-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <sm-segment class="raised blue video-tab">
+
+
+            <div class="ui tab active" data-tab="first">
+
+                <!--THESE ARE THE BUTTONS TO NAVIGATE THROUGH TABS-->
+                <div class="ui top attached tabular menu">
+                    <a class="item active" (click)="activateTab(data1,tab1)" #tab1 data-tab="first/a"><span class="badge">1</span> <br/> Basic Purchase Info</a>
+                    <a class="item" (click)="activateTab(data2, tab2)" #tab2 data-tab="first/b"><span class="badge">2</span> <br/>Mortage</a>
+                    <a class="item" (click)="activateTab(data3, tab3)" #tab3 data-tab="first/c"><span class="badge">3</span> <br/>Calculation Assumptions</a>
+                </div>
+
+
+
+                <!--SOUCRe CODE TAB-->
+                <div class="ui bottom attached tab segment active" #data1 data-tab="first/a">
+                    <first-tab></first-tab>
+                </div>
+
+                <!--COMMENT TAB-->
+                <div class="ui bottom attached tab segment" #data2 data-tab="first/b">
+                    <second-tab></second-tab>
+                </div>
+
+                <!--DOWNLOAD SECTIOn-->
+                <div class="ui bottom attached tab segment" #data3 data-tab="first/c">
+                    <third-tab></third-tab>
+                </div>
+
+
+            </div>
+
+
+        </sm-segment> <!--TAB SECTION END-->
+
+
+
+
+
+
+</div>

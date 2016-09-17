@@ -5,23 +5,24 @@
 
         <h1 class="center text-center">
             <p>Investing just got <strong class="middle-blue-font">Easy</strong></p>
+            <hr>
             <p><strong class="middle-blue-font"><span class="myelement"></span></strong></p>
         </h1>
 
+        <form (ngSubmit)="onSubmit()">
 
         <div class="form-group">
-            <input type="text" class="form-control" (focus)="myLocation()" id="name" required data-validation-required-message="Please enter your name.">
+            <input #myLovelyChild id="addressField" type="text" name="address" class="form-control autocomplete" id="name" required>
             <span class="form-highlight"></span>
             <span class="form-bar"></span>
-            <label class="float-label" for="name">Type your future ride here...</label>
+            <!--<label class="float-label" for="name">Type your future ride here...</label>-->
             <p class="help-block text-danger"></p>
         </div>
-
-
-
-
+        </form>
     </div>
 
 
-
 </div>
+        <div *ngIf="showLoader" class="ui active dimmer">
+            <div class="ui text loader">Loading</div>
+        </div>

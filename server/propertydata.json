@@ -1,0 +1,30 @@
+[
+  {"Address": {
+    "City": "South Plainfield",
+    "State": "New Jersey",
+    "Street": "123 chickenwings st",
+    "ZipCode": "07442"
+  }},
+  {"AppreciationRate": "4"},
+  {"Bathrooms": "2"},
+  {"Bedrooms": "5"},
+  {"ClosingBuyCosts": "400"},
+  {"ClosingSellCosts": "300"},
+  {"DownPayment": "5"},
+  {"FullAddress": "70 Albany Ave, Pompton Lakes, New Jersey, 07442"},
+  {"HomeownersAssociation": "400"},
+  {"Insurance": "500"},
+  {"InterestRate": "5"},
+  {"LoanTerm": "30"},
+  {"MaintenanceReserve": "300"},
+  {"ManagementFee": "4"},
+  {"PropertySize": "500"},
+  {"PropertyTaxes": "10000"},
+  {"PropertyTaxIncrease": "4"},
+  {"PropertyValue": "300000"},
+  {"RentalIncome": "2400"},
+  {"RentalIncomeIncrease": "5"},
+  {"UserId": "0"},
+  {"VacancyAllowance": "3"},
+  {"YearBuilt": "1964"}
+]

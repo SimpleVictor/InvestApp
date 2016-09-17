@@ -20,13 +20,9 @@ import { HomeModule } from "./modules/home/home.module";
         routing
     ],
     providers: [
-        provideAuth({
-            globalHeaders: [{"Content-type": "application/json"}],
-            newJwtError: true,
-            noTokenScheme: true
-        })
+
     ],
-    declarations: [ HelloComponent, AppComponent ],
+    declarations: [ AppComponent ],
     bootstrap:    [ AppComponent ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA

@@ -1,0 +1,279 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+
+/*****************************/
+/*When Screen size changes*/
+/*****************************/
+
+@media (min-width: 1024px) {
+    #home h1 p {
+        font-size: 42px;
+        font-weight: 400;
+    }
+    #home h1 strong {
+        font-size: 46px;
+    }
+
+    #WR-logo{
+
+    }
+
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    #home h1 p {
+        font-size: 38px;
+        font-weight: 400;
+    }
+    #home h1 strong {
+        font-size: 42px;
+    }
+    #WR-logo{
+        top: 45px;
+        right: -150px;
+        width:30%;
+        position: absolute;
+        height:50%;
+    }
+
+}
+@media (min-width: 320px) and (max-width: 767px) {
+
+    #home h1 p {
+        font-size: 30px;
+        font-weight: 400;
+    }
+    #home h1 strong {
+        font-size: 34px;
+    }
+    #WR-logo{
+        top: 45px;
+        right: -150px;
+        width:30%;
+        position: absolute;
+        height:50%;
+    }
+
+}
+
+
+.middle-blue-font {
+    color: #1C86EE !important;
+}
+
+.home-container{
+    height: 100%;
+    width: 100%;
+
+    background: url("assets/img/mainpage-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+
+
+}
+
+
+
+
+
+
+/********************************************
+ANIMATED INPUT FIELD
+********************************************/
+
+
+h1 {
+    font-size: 60px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.input-container{
+    position: relative;
+    top: 40%;
+    margin-top: -100px;
+
+}
+
+/* STYLE FORM INPUT */
+.form-group {
+    position: relative;
+    margin-top: 35px;
+    width:100%;
+    margin-left: 30%;
+
+}
+.input-group {
+    position: relative;
+}
+.form-control {
+    display: block;
+    height: 60px;
+    width: 40%;
+    color: #e5536b;
+    border: none;
+    border-radius: 0 !important;
+    font-size: 50px;
+    font-weight: 300;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.5);
+}
+.input-group .form-control {
+    position: relative;
+    z-index: inherit;
+    float: inherit;
+    width: 100%;
+    margin-bottom: 0;
+}
+.form-control:focus {
+    border-color: #7c7c7c;
+    outline: none;
+    box-shadow: none;
+}
+
+/* FORM LABEL STYLE- */
+label {
+    position: absolute;
+    top: -18px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: 300;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.form-horizontal .control-label {
+    position: relative;
+    top: 0;
+    margin-bottom: 0;
+}
+.float-label {
+    left: 0;
+    top: 7px;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* LABEL ACTIVE STATE */
+.form-control:focus ~ .float-label, .form-control:valid ~ .float-label {
+    top: -18px;
+    font-size: 12px;
+}
+
+/* INPUT DEFAULT COLOR */
+.form-control:focus ~ label {  color: #e5536b; }
+label ~ .form-bar:before, label ~ .form-bar:after {background: #e5536b; }
+.form-control:valid ~ .control-label {}
+
+/* FROM BAR STYLE*/
+.form-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.form-bar:before, .form-bar:after 	{
+    content: '';
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+}
+.form-bar:before {
+    left: 50%;
+}
+.form-bar:after {
+    right: 50%;
+}
+
+/* active state */
+.form-control:focus ~ .form-bar:before, .form-control:focus ~ .form-bar:after {
+    width: 50%;
+}
+
+/*HIGHLIGHT STYLE*/
+.form-highlight {
+    position: absolute;
+    height: 60%;
+    width: 60px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* HIGHLIGHT ACTIVE STYLE */
+.form-control:focus ~ .form-highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* HIGHLIGHTER ANIMATION*/
+@-webkit-keyframes inputHighlighter {
+    from { background:#e5536b; }
+    to { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#e5536b; }
+    to { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#e5536b; }
+    to { width:0; background:transparent; }
+}
+
+
+/*****************************/
+/*Typing Animation*/
+/*****************************/
+
+.typed-cursor {
+    -webkit-animation: blink .7s infinite;
+    -moz-animation: blink .7s infinite;
+    animation: blink .7s infinite;
+    opacity: 1;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

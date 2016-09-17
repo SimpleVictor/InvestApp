@@ -16,12 +16,14 @@
         <script src="assets/js/vendor/jquery.min.js"></script>
         <script src="assets/js/vendor/semantic.min.js"></script>
 
+
+        <!--BOOTSTRA{-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!--Typed js-->
+        <script src="assets/js/typed.js"></script>
         <!-- 2. Configure SystemJS -->
-        <!-- Development mod
-        <script src="systemjs.config.js"></script>
-        <script>
-            System.import('app').catch(function(err) { console.error(err); });
-        </script> -->
+
     </head>
 
     <body>
@@ -30,7 +32,11 @@
                 <div class="ui small loader"></div>
             </div>
         </app>
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function(err) { console.error(err); });
+        </script>
         <!--  Production mod  -->
-        <script src="assets/js/bundle.min.js"></script>
+        <!--<script src="assets/js/bundle.min.js"></script>-->
     </body>
 </html>

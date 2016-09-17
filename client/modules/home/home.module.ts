@@ -6,16 +6,15 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from "./home.component";
 import { routing } from "./home.routing";
 import { SharedModule } from "../shared/shared.module";
-import { ContactModule } from "../contact/contact.module";
+import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
     imports: [
-        CommonModule,
+        BrowserModule,
         HttpModule,
         routing,
         SharedModule.forRoot(),
         NgSemanticModule,
-        ContactModule
     ],
     declarations: [
         HomeComponent

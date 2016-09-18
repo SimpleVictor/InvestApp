@@ -1,0 +1,19 @@
+.final-container{
+    background-color: #E9EBEE;
+    height: 100%;
+    padding: 20px
+}
+
+#file-transfer{
+    position: fixed;
+}
+#madeIt{
+    text-align: center;
+    color: #2185D0;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
+
+.ui.compact.vertical{
+    position: relative;
+}

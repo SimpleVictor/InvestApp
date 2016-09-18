@@ -13,6 +13,7 @@ import {UsersDataModule} from "./modules/users-data/users-data.module";
 import {FormsModule} from "@angular/forms";
 import {UserInputService} from "./service/userinput.service";
 import {CalculatorService} from "./service/calculations.service";
+import {OutputModule} from "./modules/outputgraph/outputgraph.module";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import {CalculatorService} from "./service/calculations.service";
         NgSemanticModule,
         ContactModule,
         HomeModule,
+        OutputModule,
         UsersDataModule,
         routing
     ],

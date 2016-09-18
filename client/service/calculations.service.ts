@@ -46,15 +46,15 @@ export class CalculatorService{
     RedbullAllDay(DataSets){
         this.DataSet = DataSets;
 
-        console.log(parseFloat("55"));
-        console.log(typeof parseFloat("55"));
+        console.log(Number.parseFloat("55"));
+        console.log(typeof Number.parseFloat("55"));
 
         for(let i = 0; i < this.checkNumber.length; i++){
             for(let prop in this.DataSet){
                 if(!this.DataSet.hasOwnProperty(prop)) continue;
 
                 if(prop === this.checkNumber[i]){
-                    this.DataSet[prop] = parseInt(this.DataSet[prop]);
+                    this.DataSet[prop] = Number.parseFloat(this.DataSet[prop]);
                 }
                 if(prop === this.checkPercent[i]){
                     console.log(this.DataSet[prop] / 100.0);

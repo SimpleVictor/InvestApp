@@ -10,7 +10,7 @@ loginRouter.post("/data", function (request: Request, response: Response, next: 
 
     let workWithMe = request.body;
 
-    response.json(sendMe);
+    response.json("dsljsd");
 });
 
 export { loginRouter }

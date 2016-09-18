@@ -9,6 +9,9 @@ export class UserInputService implements OnInit{
     originalAddress;
     myObject;
 
+
+    useThisData;
+
     completeSet = {};
 
     endPointUrl: string = "http://localhost:3000/user/data";
@@ -33,20 +36,36 @@ export class UserInputService implements OnInit{
     doCalculations(){
         this.myObject = this.calculator.RedbullAllDay(this.completeSet);
         console.log(this.myObject);
+        this.useThisData = this.myObject;
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        let myReturn = this.http.post(this.endPointUrl, JSON.stringify(this.myObject),options)
+        this.http.post(this.endPointUrl, JSON.stringify(this.myObject),options)
             .map( (res:Response) => res.json())
             .subscribe(
                 (data) => {
                     if(data) console.log(data);
+
+                    return true;
                 }, (err) => {
                     if(err) console.log(err);
+                    return true;
                 }
             )
 
     }
 
+    getProgress(){
+        return this.getIt();
+    }
+
+    getIt(){
+        let obj = this.completeSet;
+        let size = 0, key;
+        for (key in obj) {
+            if (this.completeSet.hasOwnProperty(key)) size++;
+        }
+        return size;
+    }
 
 
 

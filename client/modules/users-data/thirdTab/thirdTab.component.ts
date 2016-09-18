@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserInputService} from "../../../service/userinput.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'third-tab',
@@ -7,7 +8,7 @@ import {UserInputService} from "../../../service/userinput.service";
     templateUrl: 'client/modules/users-data/thirdTab/thirdTab.component.html'
 })
 export class ThirdTab implements OnInit {
-
+    showLoader:boolean = false;
     checkPercent = ['mangtFee',
                     'maintReserve',
                     'AppreRate',
@@ -17,7 +18,7 @@ export class ThirdTab implements OnInit {
                     'closingCostB',
                     'closingCostS'];
 
-    constructor(private userInput: UserInputService) { }
+    constructor(private userInput: UserInputService, private routes: Router) { }
 
     ngOnInit() { }
 
@@ -28,7 +29,12 @@ export class ThirdTab implements OnInit {
     }
 
     sendData(){
-        this.userInput.doCalculations();
+        this.showLoader = true;
+        let myBoo = this.userInput.doCalculations();
+        if(true){
+            this.showLoader = false;
+            this.routes.navigate(['/final']);
+        }
     }
 
 }

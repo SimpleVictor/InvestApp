@@ -17,7 +17,8 @@ export class UsersDataComponent implements OnInit , AfterViewChecked{
     @ViewChild('tab1') currentActive;
     @ViewChild('data1') currentActiveData;
 
-
+    newPro;
+    myProgress;
     startingAddress;
 
     componentForm = {
@@ -85,6 +86,9 @@ export class UsersDataComponent implements OnInit , AfterViewChecked{
     }
 
     ngAfterViewChecked(){
+        this.myProgress = this.userInput.getProgress();
+
+        this.newPro = (this.myProgress/25)*100;
 
     }
 

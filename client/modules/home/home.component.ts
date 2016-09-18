@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit, AfterViewInit{
         function handleTyping () {
             $('.myelement').typed({
                 strings: ["Real Estate Calculator",
-                "Permits and Licenses",
+                "Investment Analysis",
                 "Net Operating Income",
                 "Payment Analysis",
                  "Property Insurance"],

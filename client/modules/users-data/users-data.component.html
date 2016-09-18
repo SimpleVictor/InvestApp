@@ -3,17 +3,13 @@
 
 <div class="row">
 
-<div class="col-md-8">
-
-
-
 
         <div class="ui blue raised segment">
             <h1>Progress Bar</h1>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar"
-                     aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                    40%
+                     aria-valuenow="newPro" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                    {{newPro}}
                 </div>
             </div>
         </div>
@@ -22,7 +18,6 @@
 
 
             <div class="ui tab active" data-tab="first">
-
                 <!--THESE ARE THE BUTTONS TO NAVIGATE THROUGH TABS-->
                 <div class="ui top attached tabular menu">
                     <a class="item active" (click)="activateTab(data1,tab1)" #tab1 data-tab="first/a"><span class="badge">1</span> <br/> Basic Purchase Info</a>
@@ -53,16 +48,6 @@
 
         </sm-segment> <!--TAB SECTION END-->
 
-
-</div>
-
-
-            <div class="col-md-4">
-
-                <div class="ui blue raised segment">
-                    <h1>Google map here</h1>
-                </div>
-            </div>
 
 
 </div><!--Google-->

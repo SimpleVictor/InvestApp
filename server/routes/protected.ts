@@ -11,8 +11,3 @@ protectedRouter.get("/", (request: Request, response: Response) => {
 });
 
 export { protectedRouter }
-
-
-
-
-

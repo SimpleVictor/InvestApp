@@ -5,7 +5,7 @@ import parseFloat = require("core-js/library/fn/number/parse-float");
 export class CalculatorService{
 
     // DataSet;
-    DataSet = {
+DataSet = {
     AppreRate:0.035,
     bathrooms:2,
     bedrooms:3,

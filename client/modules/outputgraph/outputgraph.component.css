@@ -4,8 +4,17 @@
     padding: 20px
 }
 
-#file-transfer{
-    position: fixed;
+.row{
+    height: 100%
+}
+
+.col-md-10{
+    height: 100%;
+}
+
+#main-graph-content{
+    width: 100%;
+    position: relative;
 }
 #madeIt{
     text-align: center;
@@ -16,4 +25,59 @@
 
 .ui.compact.vertical{
     position: relative;
+}
+
+hr.style14 {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+#my-graph-yo{
+
+    position: relative;
+}
+
+.ui.modal{
+    position: relative;
+}
+
+.fa{
+    font-size: 30px;
+    color: #2185D0;
+}
+
+.fa.fa-download{
+ color: red
+}
+
+.final-header{
+
+}
+img[_ngcontent-pcx-3]{
+    width: 100 !important;
+}
+
+.ui.compact.vertical.menu{
+    width: 100% !important;
+}
+
+.whole-graph{
+    height: 100%;
+    width: 100%;
+}
+.my-graph{
+    height: 100%;
+    width: 100%;
+}
+
+img{
+  width:80% !important;
+}
+
+.main-graph{
+    height: 100%;
 }

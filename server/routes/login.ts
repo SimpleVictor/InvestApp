@@ -19,50 +19,81 @@ zillow.get('GetSearchResults', parameters)
 const loginRouter: Router = Router();
 var plotly = require('plotly')('realestateinvestment', 'z3rlpmfem6');
 var phantom = require('phantom');
-phantom.create().then(function(ph) {
-    ph.createPage().then(function(page) {
-        page.open("http://www.google.com").then(function(status) {
-            page.render('google.pdf').then(function() {
-                console.log('Page Rendered');
-                ph.exit();
-            });
-        });
-    });
-});
 
+getMortgageVsEquityChart()
+getCashFlowVsInterestPaymentsChart()
+downloadUrlPdf("http://www.yahoo.com")
 
 function getMortgageVsEquityChart(){
     var chart_url = ''
-    var data = [
-        {
-            x: ["2013-10-04 22:23:00", "2013-11-04 22:23:00", "2013-12-04 22:23:00"],
-            y: [1, 3, 6],
-            type: "scatter"
-        }
-    ];
-    var graphOptions = {filename: "date-axes", fileopt: "overwrite"};
+    var trace1 = {
+        x: ["giraffes", "orangutans", "monkeys"],
+        y: [20, 14, 23],
+        name: "SF Zoo",
+        type: "bar"
+    };
+    var trace2 = {
+        x: ["giraffes", "orangutans", "monkeys"],
+        y: [12, 18, 29],
+        name: "LA Zoo",
+        type: "bar"
+    };
+    var data = [trace1, trace2];
+    var layout = {barmode: "stack"};
+    var graphOptions = {layout: layout, filename: "stacked-bar", fileopt: "overwrite"};
     plotly.plot(data, graphOptions, function (err, msg) {
         chart_url = msg.url
-        console.log(msg.url);
+        console.log(msg);
     });
     return chart_url
 }
 
-function getCashFlowVsROIChart(){
+function getCashFlowVsInterestPaymentsChart(){
     var chart_url = ''
-    var data = [
-        {
-            x: ["2013-10-04 22:23:00", "2013-11-04 22:23:00", "2013-12-04 22:23:00"],
-            y: [1, 3, 6],
-            type: "scatter"
+    var trace1 = {
+        x: [1, 2, 3],
+        y: [40, 50, 60],
+        name: "yaxis data",
+        type: "scatter"
+    };
+    var trace2 = {
+        x: [2, 3, 4],
+        y: [4, 5, 6],
+        name: "yaxis2 data",
+        yaxis: "y2",
+        type: "scatter"
+    };
+    var data = [trace1, trace2];
+    var layout = {
+        title: "Double Y Axis Example",
+        yaxis: {title: "yaxis title"},
+        yaxis2: {
+            title: "yaxis2 title",
+            titlefont: {color: "rgb(148, 103, 189)"},
+            tickfont: {color: "rgb(148, 103, 189)"},
+            overlaying: "y",
+            side: "right"
         }
-    ];
-    var graphOptions = {filename: "date-axes", fileopt: "overwrite"};
+    };
+    var graphOptions = {layout: layout, filename: "multiple-axes-double", fileopt: "overwrite"};
     plotly.plot(data, graphOptions, function (err, msg) {
         chart_url = msg.url
-        console.log(msg.url);
+        console.log(msg);
     });
     return chart_url
+}
+
+function downloadUrlPdf(url){
+    phantom.create().then(function(ph) {
+        ph.createPage().then(function(page) {
+            page.open(url).then(function(status) {
+                page.render(url + '.pdf').then(function() {
+                    console.log('Page Rendered');
+                    ph.exit();
+                });
+            });
+        });
+    });
 }
 
 

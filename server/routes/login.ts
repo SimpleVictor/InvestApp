@@ -30,26 +30,46 @@ phantom.create().then(function(ph) {
     });
 });
 
-var data = [
-    {
-        x: ["2013-10-04 22:23:00", "2013-11-04 22:23:00", "2013-12-04 22:23:00"],
-        y: [1, 3, 6],
-        type: "scatter"
-    }
-];
-var graphOptions = {filename: "date-axes", fileopt: "overwrite"};
-plotly.plot(data, graphOptions, function (err, msg) {
-    console.log(msg);
+
+function getMortgageVsEquityChart(){
+    var chart_url = ''
+    var data = [
+        {
+            x: ["2013-10-04 22:23:00", "2013-11-04 22:23:00", "2013-12-04 22:23:00"],
+            y: [1, 3, 6],
+            type: "scatter"
+        }
+    ];
+    var graphOptions = {filename: "date-axes", fileopt: "overwrite"};
+    plotly.plot(data, graphOptions, function (err, msg) {
+        chart_url = msg.url
+        console.log(msg.url);
+    });
+    return chart_url
+}
+
+function getCashFlowVsROIChart(){
+    var chart_url = ''
+    var data = [
+        {
+            x: ["2013-10-04 22:23:00", "2013-11-04 22:23:00", "2013-12-04 22:23:00"],
+            y: [1, 3, 6],
+            type: "scatter"
+        }
+    ];
+    var graphOptions = {filename: "date-axes", fileopt: "overwrite"};
+    plotly.plot(data, graphOptions, function (err, msg) {
+        chart_url = msg.url
+        console.log(msg.url);
+    });
+    return chart_url
+}
+
+
+loginRouter.post("/data", function (request: Request, response: Response, next: NextFunction) {
+
 });
 
 
-loginRouter.post("/signup", function (request: Request, response: Response, next: NextFunction) {
-
-});
-
-// login method
-loginRouter.post("/", function (request: Request, response: Response, next: NextFunction) {
-
-});
 
 export { loginRouter }

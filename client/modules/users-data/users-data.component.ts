@@ -47,17 +47,17 @@ export class UsersDataComponent implements OnInit , AfterViewChecked{
     constructor(private el: ElementRef, private userInput: UserInputService) { }
 
     ngOnInit() {
-        this.startingAddress = this.userInput.originalAddress;
-       console.log(this.startingAddress);
-        for (let i = 0; i < this.startingAddress.address_components.length; i++) {
-            var addressType = this.startingAddress.address_components[i].types[0];
-            if (this.componentForm[addressType]) {
-                let val = this.startingAddress.address_components[i][this.componentForm[addressType]];
-                this.realForm[addressType] =  val;
-            }
-        }
-
-        console.log(this.realForm);
+       //  this.startingAddress = this.userInput.originalAddress;
+       // console.log(this.startingAddress);
+       //  for (let i = 0; i < this.startingAddress.address_components.length; i++) {
+       //      var addressType = this.startingAddress.address_components[i].types[0];
+       //      if (this.componentForm[addressType]) {
+       //          let val = this.startingAddress.address_components[i][this.componentForm[addressType]];
+       //          this.realForm[addressType] =  val;
+       //      }
+       //  }
+       //
+       //  console.log(this.realForm);
 
     }
 

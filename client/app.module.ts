@@ -11,6 +11,8 @@ import { ContactModule } from "./modules/contact/contact.module";
 import { HomeModule } from "./modules/home/home.module";
 import {UsersDataModule} from "./modules/users-data/users-data.module";
 import {FormsModule} from "@angular/forms";
+import {UserInputService} from "./service/userinput.service";
+import {CalculatorService} from "./service/calculations.service";
 
 @NgModule({
     imports: [
@@ -24,7 +26,8 @@ import {FormsModule} from "@angular/forms";
         routing
     ],
     providers: [
-
+        UserInputService,
+        CalculatorService
     ],
     declarations: [ AppComponent ],
     bootstrap:    [ AppComponent ],

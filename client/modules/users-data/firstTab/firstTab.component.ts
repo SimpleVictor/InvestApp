@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserInputService} from "../../../service/userinput.service";
 
 declare var $:any;
 
@@ -9,14 +10,33 @@ declare var $:any;
 })
 export class FirstTab implements OnInit {
 
-    testMe: "sscds";
+    checkNumber = [
+        'propPrice',
+        'bathrooms',
+        'bedroom',
+        'yearBuilt',
+        'propSize'
+    ];
 
-    constructor() { }
+    constructor(private userInput : UserInputService) {
+
+    }
 
     ngOnInit() {
         $('.fa.fa-info-circle').popup({
                 inline: true
         });
+    }
+
+    onKeyUp(from, data){
+        for(let i = 0; i < this.checkNumber.length; i++){
+            if(this.checkNumber[i] === from){
+                let convertedInt = parseInt(data);
+                this.userInput.pushtoComplete(from, convertedInt);
+            }else{
+                this.userInput.pushtoComplete(from, data);
+            }
+        }
     }
 
 

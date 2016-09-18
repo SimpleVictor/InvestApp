@@ -11,7 +11,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-usd "></i>
                         </span>
-                        <input type="text" id="rentalIncome" class="form-control">
+                        <input type="number" id="rentalIncome" (keyup)="onKeyUp('rentalIncome', rentalIncome.value)" #rentalIncome class="form-control">
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-usd "></i>
                         </span>
-                        <input type="text" id="propertyTax" class="form-control">
+                        <input type="number" id="propertyTax" (keyup)="onKeyUp('propertyTax', propertyTax.value)" #propertyTax class="form-control">
                     </div>
                 </div>
             </div>
@@ -37,18 +37,18 @@
                         <span class="input-group-addon">
                             <i class="fa fa-usd "></i>
                         </span>
-                        <input type="text" id="insurance" class="form-control">
+                        <input type="number" id="insurance" (keyup)="onKeyUp('insurance', insurance.value)" #insurance class="form-control">
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="homeasoc">Homeowner's Associaion <i class="fa fa-info-circle" data-content="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"></i></label>
+                    <label for="homeOwnerAssoc">Homeowner's Associaion <i class="fa fa-info-circle" data-content="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"></i></label>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-usd "></i>
                         </span>
-                        <input type="text" id="homeasoc" class="form-control">
+                        <input type="number" id="homeOwnerAssoc" (keyup)="onKeyUp('homeOwnerAssoc', homeOwnerAssoc.value)" #homeOwnerAssoc class="form-control">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="mangtFee" class="form-control">
+                        <input type="number" id="mangtFee" (keyup)="onKeyUp('mangtFee', mangtFee.value)" #mangtFee class="form-control">
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent"></i>
                         </span>
-                        <input type="text" id="maintReserve" class="form-control">
+                        <input type="number" (keyup)="onKeyUp('maintReserve', maintReserve.value)" #maintReserve id="maintReserve" class="form-control">
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="AppreRate" class="form-control">
+                        <input type="number" id="AppreRate" (keyup)="onKeyUp('AppreRate', AppreRate.value)" #AppreRate class="form-control">
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="vacanyAll" class="form-control">
+                        <input type="number" id="vacanyAll" (keyup)="onKeyUp('vacanyAll', vacanyAll.value)" #vacanyAll class="form-control">
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="rentIncomeInc" class="form-control">
+                        <input type="number" id="rentIncomeInc" (keyup)="onKeyUp('rentIncomeInc', rentIncomeInc.value)" #rentIncomeInc class="form-control">
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="propTaxInc" class="form-control">
+                        <input type="number" id="propTaxInc" (keyup)="onKeyUp('propTaxInc', propTaxInc.value)" #propTaxInc class="form-control">
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="closingCostB" class="form-control">
+                        <input type="number" (keyup)="onKeyUp('closingCostB', closingCostB.value)" #closingCostB id="closingCostB" class="form-control">
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-percent "></i>
                         </span>
-                        <input type="text" id="closingCostS" class="form-control">
+                        <input type="number" id="closingCostS" (keyup)="onKeyUp('closingCostS', closingCostS.value)" #closingCostS class="form-control">
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
             <button class="btn btn-danger btn-block">Back</button>
         </div>
         <div class="col-md-6">
-            <button class="btn btn-success btn-block">Submit</button>
+            <button class="btn btn-success btn-block" (click)="sendData()">Submit</button>
         </div>
     </div>
 

@@ -4,7 +4,34 @@ import parseFloat = require("core-js/library/fn/number/parse-float");
 @Injectable()
 export class CalculatorService{
 
-    DataSet;
+    // DataSet;
+    DataSet = {
+    AppreRate:0.035,
+    bathrooms:2,
+    bedrooms:3,
+    closingCostB:0.04,
+    closingCostS:0.04,
+    downpayment:24000,
+    homeOwnerAssoc:20,
+    insurance:109,
+    interestrate:0.04,
+    loanterm:30,
+    maintReserve:0.05,
+    mangtFee:0.1,
+    propAddress:"162 hudson",
+    propCity:"South Plainfield",
+    propPrice:127,
+    propSize:1822,
+    propState:"New Jersey",
+    propTaxInc:0.035,
+    propZipcode:"07080",
+    propertyTax:226,
+    propertyValue:120000,
+    rentIncomeInc:0.04,
+    rentalIncome:1250,
+    vacanyAll:0.05,
+    yearBuilt:1981
+};
     // make this into an object
     checkNumber = [
         'propPrice',
@@ -44,10 +71,8 @@ export class CalculatorService{
     constructor() { }
 
     RedbullAllDay(DataSets){
-        this.DataSet = DataSets;
+        // this.DataSet = DataSets;
 
-        console.log(Number.parseFloat("55"));
-        console.log(typeof Number.parseFloat("55"));
 
         for(let i = 0; i < this.checkNumber.length; i++){
             for(let prop in this.DataSet){
@@ -57,25 +82,21 @@ export class CalculatorService{
                     this.DataSet[prop] = Number.parseFloat(this.DataSet[prop]);
                 }
                 if(prop === this.checkPercent[i]){
-                    console.log(this.DataSet[prop] / 100.0);
                     this.DataSet[prop] =  (this.DataSet[prop] / 100.0);
-                    console.log("New ONe:" + this.DataSet[prop]);
-                    console.log(this.DataSet);
 
                 }
 
             }
         }
 
-        console.log(this.DataSet);
-        this.calculateEverything();
-        return "bang";
+        // console.log(this.DataSet);
+        return this.calculateEverything();
     }
 
 
     calculateEverything(){
 
-
+        var AllmyData;
 
 
         /* Property Object, contains 3 objects basic_info, mortgage, and calculation_assumptions. A property object contains all needed input to generate property
@@ -388,9 +409,9 @@ export class CalculatorService{
             return thirtyYearROI;
         }
         if(debug){
-            var test_basic_info = new basic_info(this.DataSet.propPrice, this.DataSet.propAddress, this.DataSet.propCity, this.DataSet.propCity, this.DataSet.propZipecode, this.DataSet.yearBuilt, this.DataSet.bathrooms, this.DataSet.bathrooms);
+            var test_basic_info = new basic_info(this.DataSet.propPrice, this.DataSet.propAddress, this.DataSet.propCity, this.DataSet.propCity, this.DataSet.propZipcode, this.DataSet.yearBuilt, this.DataSet.bathrooms, this.DataSet.bathrooms);
             var test_mortgage = new mortgage(true, this.DataSet.propertyValue, this.DataSet.downpayment, this.DataSet.interestrate, this.DataSet.loanterm);
-            var test_calculation_assumptions = new calculation_assumptions(this.DataSet.rentalIncome, this.DataSet.propertyTax, this.DataSet.insurance, this.DataSet.homeOwnerAssoc, this.DataSet.mangtFee, this.DataSet.maintReserve, this.DataSet.AppreRate, this.DataSet.vancyAll, this.DataSet.rentIncomeInc, this.DataSet.propTaxInc, this.DataSet.closingCostB, this.DataSet.closingCostS);
+            var test_calculation_assumptions = new calculation_assumptions(this.DataSet.rentalIncome, this.DataSet.propertyTax, this.DataSet.insurance, this.DataSet.homeOwnerAssoc, this.DataSet.mangtFee, this.DataSet.maintReserve, this.DataSet.AppreRate, this.DataSet.vacanyAll, this.DataSet.rentIncomeInc, this.DataSet.propTaxInc, this.DataSet.closingCostB, this.DataSet.closingCostS);
 
             testPrintObject(test_basic_info);
             testPrintObject(test_mortgage);
@@ -452,11 +473,39 @@ export class CalculatorService{
             console.log("Capitilization Cap Rate 	" + testPrintObject(capRates));
             console.log("Cash on Cash Return COC		" + testPrintObject(cashOnCashRates));
             console.log("Return on Investment ROI: 	" + testPrintObject(returnOnInvest));
+
+
+            AllmyData = {
+                loanAmount: loanAmount,
+                thirtyYearReturn: thirtyYearReturn,
+                thirtyYearVaccancy : thirtyYearVaccancy,
+                thirtyYearOperatingIncome : thirtyYearOperatingIncome,
+                thirtyYearPropertyTaxes : thirtyYearPropertyTaxes,
+                insuranceThirtyYear : insuranceThirtyYear,
+                homeAssociationYear : homeAssociationYear,
+                maintenanceReserveThirtyYear : maintenanceReserveThirtyYear,
+                propertyManagementThirtyYear : propertyManagementThirtyYear,
+                thirtyYearOperatingExp : thirtyYearOperatingExp,
+                NetOperatingIncome : NetOperatingIncome,
+                thirtyYearMortgageExpense : thirtyYearMortgageExpense,
+                thirtyYearAnnualCashFlow : thirtyYearAnnualCashFlow,
+                thirtyYearMonthlyCashFlow : thirtyYearMonthlyCashFlow,
+                amortSchedule : amortSchedule,
+                thirtyYearInterestPayments : thirtyYearInterestPayments,
+                capitalApprec: capitalApprec,
+                thirtyYearMortgageBalance : thirtyYearMortgageBalance,
+                thirtyYearEquity : thirtyYearEquity,
+                capRates : capRates,
+                cashOnCashRates : cashOnCashRates,
+                returnOnInvest : returnOnInvest
+            }
+
+
         }
 
 
 
-
+        return AllmyData;
 
 
     }

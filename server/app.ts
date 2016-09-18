@@ -17,7 +17,7 @@ app.use(urlencoded({ extended: true }));
 
 // api routes
 app.use("/api", protectedRouter);
-app.use("/login", loginRouter);
+app.use("/user", loginRouter);
 
 app.use('/client', express.static(join(__dirname, '../client')));
 
